@@ -24,7 +24,7 @@ public class WhereClause {
     /*Testing purposes only
     public static void main(String [] args)
     {
-    	String s=whereClause("Salary equal to million");
+    	String s=whereClause("Salary below 500000");
     	System.out.println(s);
     }*/
 }
