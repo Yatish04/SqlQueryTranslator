@@ -21,10 +21,10 @@ public class WhereClause {
     	sent=" "+parts[0]+" " + s1;
     	return sent;
     }
-    
+    /*Testing purposes only
     public static void main(String [] args)
     {
     	String s=whereClause("Salary under 100000");
     	System.out.println(s);
-    }
+    }*/
 }

@@ -71,11 +71,11 @@ public class Conditionals {
     			value+=" "+Integer.parseInt(parts[l-1]);
     	//Return the symbol that was converted.
     	return value;
-    }//Testing purposes only
+    }/*Testing purposes only
     public static void main(String [] args)
     {
     	String value=""+conditions(" greater than 50");
     	System.out.println(value);
-    }
+    }*/
 
 }
