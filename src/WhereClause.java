@@ -18,13 +18,13 @@ public class WhereClause {
     	 */
     	//System.out.println(s1+"\tIs the edited string");
     	
-    	sent=" "+parts[0]+" " + s1;
+    	sent="WHERE "+parts[0]+" " + s1;
     	return sent;
     }
     /*Testing purposes only
     public static void main(String [] args)
     {
-    	String s=whereClause("Salary under 100000");
+    	String s=whereClause("Salary equal to million");
     	System.out.println(s);
     }*/
 }
