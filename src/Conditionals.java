@@ -4,6 +4,7 @@ public class Conditionals {
         //todo:Identify the <,>,=,not,etc operations and apply accordingly
     	/* cond hold the condition that has to be altered in the where clause. 
     	Converting it to a character symbol*/
+    	cond=cond.trim();
     	String parts[] = cond.split(" ");//Maximum of 3 tokens eg. greater than equal
     	String value="";
     	String oreq="or equals";
@@ -70,11 +71,11 @@ public class Conditionals {
     			value+=" "+Integer.parseInt(parts[l-1]);
     	//Return the symbol that was converted.
     	return value;
-    }/*Testing purposes only
+    }//Testing purposes only
     public static void main(String [] args)
     {
-    	String value=""+conditions("under 5000");
+    	String value=""+conditions(" greater than 50");
     	System.out.println(value);
-    }*/
+    }
 
 }
