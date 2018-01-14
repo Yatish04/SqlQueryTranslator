@@ -43,29 +43,25 @@ public class Conditionals {
 		while (iter.hasNext()){
 			String arrayname=iter.next();
 			String[] array =m.get(arrayname);
-			for (String colname:array) {
-				if(!arrayname.equals("comparitives")){
-					//this is implicit joining using conjunctions
-					if(listofcolumns.contains(arrayname)){
-						System.out.println(arrayname);
-						if(i==0)
-						{res=process(data,array,arrayname);
-							i++;}
-						else
-							res=res+" and "+process(data,array,arrayname);
-						listofcolumns.remove(arrayname);
-					}
-					//else {
-					// TODO: this part should handle different relations between different columns
-					// TODO:this part can be handled later
-					//
-					// }
+			if(!arrayname.equals("comparitives")){
+				//this is implicit joining using conjunctions
+				System.out.println(arrayname);
+				if(i==0)
+				{res=process(data,array,arrayname);
+					i++;}
+				else
+					res=res+" and "+process(data,array,arrayname);
+				//else {
+				// TODO: this part should handle different relations between different columns
+				// TODO:this part can be handled later
+				//
+				// }
 
 
-				}
-				//System.out.println(arrayname+"\n");
-				//System.out.println(colname);
 			}
+			//System.out.println(arrayname+"\n");
+			//System.out.println(colname);
+
 			// System.out.println(arrayname);
 
 
