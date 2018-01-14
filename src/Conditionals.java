@@ -1,4 +1,4 @@
-import java.util.*;
+	import java.util.*;
 
 public class Conditionals {
 
@@ -10,7 +10,7 @@ public class Conditionals {
 		//sample input->  city->["bangalore","berlin"],"bangalore"->[equals],"berlin"->"not equals"
 		//sample output-> city equals bangalore and city not equals berlin
 		//default value is equals
-		//MAp is the data map created in the main
+		//MAP is the data map created in the main
 		String res="";//result
 		int i=0;
 		int length=arr.length;
@@ -135,14 +135,17 @@ public class Conditionals {
 
 		String arr1[]={"200"};
 		map.put("Cost",arr1);
-		data.put("100","greater than ");//ake sure of the spacings-means greater than 100
+		//System.out.print((map)+"The mapis\n\n");
+		data.put("100","greater than ");//make sure of the spacings-means greater than 100
 		data.put("200","less than equal ");
+		//System.out.print((data)+"The mapis\n\n");
 		String[] condition={"none"};
 		//work on condition which are the relations which are there in sentence
 		//TODO:After the basic proto type
 
 		String s="";
 		map.put("comparitives",condition);
+		//System.out.print((map)+"The mapis\n\n");
 		s=stmntgenerator(map,data);
 		String value=""+conditions(s);
 		System.out.println(s);
