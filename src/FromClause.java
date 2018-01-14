@@ -26,7 +26,7 @@ public class FromClause {
     	System.out.println("Value="+val);    	
     	res=res+" "+val;    	
     	return res;
-    }
+    }/*For testing purposes only
     public static void main(String []args)
     {
     	 Map<Integer,String> map=new HashMap<Integer,String>();  
@@ -37,6 +37,6 @@ public class FromClause {
     	 
     	 String res=fromClause(map,3);
     	 System.out.println(res);
-    }
+    }*/
 
 }
