@@ -1,4 +1,5 @@
 equal
+equals
 is
 equivalent
 comparable

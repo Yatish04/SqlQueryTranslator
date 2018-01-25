@@ -1,0 +1,4 @@
+ascending
+sorted
+increasing
+wise
