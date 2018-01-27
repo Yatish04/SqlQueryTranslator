@@ -1,0 +1,4 @@
+all
+each
+every
+complete

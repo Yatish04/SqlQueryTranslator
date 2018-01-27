@@ -1,0 +1,5 @@
+customers
+geography
+colors
+clothes 
+sales
