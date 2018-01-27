@@ -71,8 +71,8 @@ public class Minmax {
         for (String inp:collist) {
             temp.add(inp);
         }
-        temp.add("price");
-        temp.add("product");
+        //temp.add("price");
+        //temp.add("product");
         String [] s=preprocess(input);
         this.finalstring=max(s,temp);
 

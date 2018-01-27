@@ -1,2 +1,0 @@
-# SampleTables
-SampleTables for SQL

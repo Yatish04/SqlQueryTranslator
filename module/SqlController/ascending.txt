@@ -1,4 +1,0 @@
-ascending
-sorted
-increasing
-wise
