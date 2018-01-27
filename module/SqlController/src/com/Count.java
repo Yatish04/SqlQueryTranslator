@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Count {
+    public boolean context;
  public String finalstring;
     public static String Count(String c)
     {    /*
@@ -15,8 +16,14 @@ public class Count {
          */
         return "COUNT("+c+")";
     }
-    public Count(String s1) throws IOException {
+    public Count(String s1,boolean context) throws IOException {
 
+        if(context==true)
+        {
+            this.finalstring="";
+            return;
+        }
+        this.context=true;
         //String s1 = " type of c_productid and t_pokemon";
         String s=s1;
         //String c="c_sales";

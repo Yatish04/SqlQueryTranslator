@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Sum {
     public String finalstring;
+    public  boolean context;
     static String sum(String c) {
         //System.out.println("Inside Sum");
         /*
@@ -16,9 +17,15 @@ public class Sum {
         return "SUM("+c+")";
     }
 
-    public Sum(String s1) throws IOException {
+    public Sum(String s1,boolean context) throws IOException {
         String s = s1;//" number of c_sales";
         //String c="c_sales";
+        if(context==true)
+        {
+            this.finalstring="";
+            return;
+        }
+        this.context=true;
         List<String> l = Files.readAllLines(Paths.get("Sum.txt"));
         List<String> list=new ArrayList<String>();
         for (String w : s.split(" ")) {

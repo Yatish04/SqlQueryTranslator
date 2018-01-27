@@ -36,6 +36,7 @@ public class Minmax {
         List<String> maxwords = Files.readAllLines(Paths.get("maximum.txt"));
         List<String> minwords = Files.readAllLines(Paths.get("minimum.txt"));
         String res="";
+
         boolean switc=false;
         for (String iter: input ) {
 
@@ -61,7 +62,6 @@ public class Minmax {
 
 
     public Minmax(String input,ArrayList<String> collist) throws IOException {
-
 
         //keywords to look for- minimum, maximum else return ""
         //String sq="finds the price of the most expensive product";

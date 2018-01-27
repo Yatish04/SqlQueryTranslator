@@ -186,22 +186,23 @@ public class POSTaggerExample
        System.out.println("\n\nINTEGRATION BEGINS FROM HERE\n\n");
             System.out.println(cleaned2);
             System.out.println(sentence);
+            boolean context=false;
        String res="";
             Select s=new Select(sentence);
             res=s.finalstring;
-            Count s1=new Count(sentence);
-            res+=s1.finalstring;
-
+            Count s1=new Count(sentence,context);
+            res+=" "+s1.finalstring;
+            context=s1.context;
             Minmax s3=new Minmax(cleaned2,columnnameslist);
-            res+=s3.finalstring;
-            Sum s4=new Sum(sentence);
+            res+=" "+s3.finalstring;
+            Sum s4=new Sum(sentence,context);
             res+=s4.finalstring;
             From s5=new From(sentence);
-            res+=s5.finalstring;
+            res+=" "+s5.finalstring;
 //System.out.println(cleaned2+"cleaned");
 
             OrderByClause s6=new OrderByClause(cleaned2,columnnameslist);
-            res+=s6.finalstring;
+            res+=" "+s6.finalstring;
 
             System.out.println("\n\nThe Sql query is");
             System.out.println(res);
