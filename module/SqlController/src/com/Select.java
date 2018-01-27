@@ -38,6 +38,11 @@ public class Select {
         List<String> l = Files.readAllLines(Paths.get("Select.txt"));
         List<String> list = new ArrayList<String>();
         List<String> all = Files.readAllLines(Paths.get("All.txt"));
+        List<String> counts = Files.readAllLines(Paths.get("Count.txt"));
+        List<String> sum = Files.readAllLines(Paths.get("Sum.txt"));
+
+        List<String> maxwords = Files.readAllLines(Paths.get("maximum.txt"));
+        List<String> minwords = Files.readAllLines(Paths.get("minimum.txt"));
         for (String w : s.split(" ")) {
             list.add(w.toLowerCase());
 
@@ -47,19 +52,18 @@ public class Select {
         String col[] = s.split(" ");
         int j = 0;
         int count = 2;
+        for (String inp:col) {
+            if(maxwords.contains(inp)||minwords.contains(inp)||counts.contains(inp)||sum.contains(inp)){
+                this.finalstring="SELECT";
+                return;
+            }
+        }
         for (int i = 0; i < col.length; i++) {
             if (col[i].contains("c_")) {
                 col1[j++] = "" + col[i];
-                //break;
                 count = 1;
             }
-            /*else if((col[i].contains("all")||col[i].contains("every")||col[i].contains("complete")||col[i].contains("each")))
-                {   if(count==0)
-                {col1[0]="*";
-                break;}
-                else //count==1
-                    col[i]
-            }*/
+
         }
         for (String t : all) {
             for (int i = 0; i < col.length; i++) {

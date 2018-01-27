@@ -35,13 +35,6 @@ public class From {
         String col[]=s.split(" ");
         for (int i=0;i<col.length;i++)
         {
-            if(col[i].contains("the")||col[i].contains("of"))//Can add to this later.
-            {
-                col[i]="";
-            }
-        }
-        for (int i=0;i<col.length;i++)
-        {
             if(col[i].contains("t_"))
             {
                 col1=""+col[i];//As of now col1 is a single string or single table

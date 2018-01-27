@@ -1,5 +1,4 @@
 count
-number
 whole
-number of
 list
+number of

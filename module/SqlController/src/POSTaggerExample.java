@@ -46,7 +46,7 @@ public class POSTaggerExample
 
 
         try {           
-        	sentence="get all the customers who are in managemnt or technica";
+        	sentence="get total number of shirt sold from clothes";
             tokenModelIn = new FileInputStream("en-token.bin");
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             Tokenizer tokenizer = new TokenizerME(tokenModel);
@@ -182,8 +182,10 @@ public class POSTaggerExample
 
             }
 
-        System.out.println(cleaned2);
+
        System.out.println("\n\nINTEGRATION BEGINS FROM HERE\n\n");
+            System.out.println(cleaned2);
+            System.out.println(sentence);
        String res="";
             Select s=new Select(sentence);
             res=s.finalstring;
