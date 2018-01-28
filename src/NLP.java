@@ -13,13 +13,13 @@ public class NLP {
         al1 = map.get("customers");
         System.out.println("customers contains   " + al1);
 
-        al2 = map.get("colors");
+        al2 = map.get("product");
         System.out.println("colors contains   " + al2);
 
         al3 = map.get("geography");
         System.out.println("georaphy contains   " + al3);
 
-        al4 = map.get("clothes");
+        al4 = map.get("productcategory");
         System.out.println("clothes contains   " + al4);
 
         al5 = map.get("sales");
@@ -36,29 +36,33 @@ public class NLP {
             ArrayList<String> al4 = new ArrayList<String>();
             ArrayList<String> al5 = new ArrayList<String>();
 
-        String cust[]=new String[]{"management","technical","marketing","accounting","sales"};
+            String inp="Name MaritalStatus Gender EmailAddress YearlyIncome TotalChildren intChildrenAtHome Education Occupation CarsOwned Phone";
+
+            String cust[]=inp.toLowerCase().split(" ");
         al1.addAll(Arrays.asList(cust));
         m.put("customers",al1);
 
-        String loc[]=new String[]{"India","Bangalore","Canada","Tokyo","California",
-                "Chicago","Korea","France","Germany"};
-
+        String inp1="city state country";
+        String loc[]=inp1.toLowerCase().split(" ");
         al2.addAll(Arrays.asList(loc));
         m.put("location",al2);
 
-        String clrs[]=new String[] {"red","blue","yellow","black","pink","green","orange","purple","white"};
+        String inp2="ProductCategoryName";
+        String clrs[]=inp2.toLowerCase().split(" ");
         al3.addAll(Arrays.asList(clrs));
-        m.put("colors",al3);
+        m.put("productcategory",al3);
 
-        String clths[]=new String[]{"shirt", "trousers", "jacket", "socks", "blouse", "t-shirt", "sweater", "pants", "shoes"};
+        String inp3="ProductName StandardCost Color SafetyStockLevel ReorderPoint ListPrice Description";
+        String clths[]=inp3.toLowerCase().split(" ");
         al4.addAll(Arrays.asList(clths));
-        m.put("clothes",al4);
+        m.put("product",al4);
 
-        String sales[]=new String[]{"$100,000", "$100,250", "$100,500", "$100,750", "$200,000", "$200,250", "$200,500", "$200,750", "$300,000"};
+        String inp4="Order DateShip DateOrder Quantity UnitPrice UnitPrice DiscountPct DiscountAmount ProductStandardCost SalesAmount TotalProductCost";
+        String sales[]=inp4.toLowerCase().split(" ");
         al5.addAll(Arrays.asList(sales));
         m.put("sales",al5);
 
-     //   DisplayQuery(m);
+        //DisplayQuery(m);
 
         }
 

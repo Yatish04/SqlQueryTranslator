@@ -49,13 +49,15 @@ public class Sum {
         for (String t:list)
         {
             if(l.containsAll(Collections.singleton(t))&&count==1)
-            {s=sum(col1);
-                break;}
+            {
+                s=sum(col1);
+                break;
+            }
             else
                 s="";
 
         }
         this.finalstring=s;
-
+System.out.println("Final strinf "+this.finalstring);
     }
 }

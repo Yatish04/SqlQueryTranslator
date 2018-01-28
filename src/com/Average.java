@@ -49,7 +49,8 @@ public class Average {
 
 
         }
-        this.finalstring=s1;
+        System.out.println("averahe "+s);
+        this.finalstring=s;
 
     }
 }

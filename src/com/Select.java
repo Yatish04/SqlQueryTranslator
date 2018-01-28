@@ -40,7 +40,7 @@ public class Select {
         List<String> all = Files.readAllLines(Paths.get("All.txt"));
         List<String> counts = Files.readAllLines(Paths.get("Count.txt"));
         List<String> sum = Files.readAllLines(Paths.get("Sum.txt"));
-
+        List<String> average=Files.readAllLines(Paths.get("Average.txt"));
         List<String> maxwords = Files.readAllLines(Paths.get("maximum.txt"));
         List<String> minwords = Files.readAllLines(Paths.get("minimum.txt"));
         for (String w : s.split(" ")) {
@@ -53,7 +53,7 @@ public class Select {
         int j = 0;
         int count = 2;
         for (String inp:col) {
-            if(maxwords.contains(inp)||minwords.contains(inp)||counts.contains(inp)||sum.contains(inp)){
+            if(maxwords.contains(inp)||minwords.contains(inp)||counts.contains(inp)||sum.contains(inp)||average.contains(inp)){
                 this.finalstring="SELECT";
                 return;
             }

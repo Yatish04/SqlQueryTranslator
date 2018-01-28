@@ -24,14 +24,9 @@ public class From {
         List<String> l1 = Files.readAllLines(Paths.get("From.txt"));
         List<String> list1=new ArrayList<String>();
         for (String w : s.split(" ")) {
-            /*if(w.contains("the")||w.contains("of"))//Can add to this later.
-            {
-                list1.add("");
-            }
-            else*/
             list1.add(w.toLowerCase());
-
-        }String col1="";
+        }
+        String col1="";
         String col[]=s.split(" ");
         for (int i=0;i<col.length;i++)
         {
@@ -41,16 +36,14 @@ public class From {
                 break;
             }
         }
-
-        //System.out.println(col1);
-        //System.out.println(list);
+        System.out.println(col1);
         String s2="";
         for (String t:list1)
         {
             //System.out.println(t+"Test");
             if(l1.containsAll(Collections.singleton(t)))
             { s2=from(col1);
-                //System.out.println("Hello"+s);
+                System.out.println(col1);
 
                 break;
             }

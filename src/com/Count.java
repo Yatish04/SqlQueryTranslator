@@ -23,7 +23,7 @@ public class Count {
             this.finalstring="";
             return;
         }
-        this.context=true;
+
         //String s1 = " type of c_productid and t_pokemon";
         String s=s1;
         //String c="c_sales";
@@ -55,6 +55,10 @@ public class Count {
                 s="";
 
         }
+        if(s!=""){
+            this.context=true;
+        }
+
         this.finalstring=s;
     }
 }
