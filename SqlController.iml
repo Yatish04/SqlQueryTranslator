@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="opennlp-tools-1.8.4" level="project" />
     <orderEntry type="library" name="algs4" level="project" />
+    <orderEntry type="library" name="w3c-dom" level="project" />
   </component>
 </module>

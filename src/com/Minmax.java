@@ -33,8 +33,11 @@ public class Minmax {
     }
 
     public static String max(String []input ,Set<String> columnnames) throws IOException{
-        List<String> maxwords = Files.readAllLines(Paths.get("maximum.txt"));
-        List<String> minwords = Files.readAllLines(Paths.get("minimum.txt"));
+        XMLParser s6=new XMLParser();
+        s6.input="maximum";
+        List<String> maxwords=s6.xmlParser() ;
+        s6.input="minimum";
+        List<String> minwords = s6.xmlParser();
         String res="";
 
         boolean switc=false;

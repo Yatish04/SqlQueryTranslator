@@ -1,8 +1,6 @@
 package com;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,14 +33,22 @@ public class Select {
         String s1 = s;
         //System.out.println(s);
         //String c="c_sales";
-        List<String> l = Files.readAllLines(Paths.get("Select.txt"));
+        XMLParser s6=new XMLParser();
+        s6.input="Average";
+        List<String> average=s6.xmlParser() ;
+        s6.input="Sum";
+        List<String> sum=s6.xmlParser() ;
+        s6.input="Count";
+        List<String> counts=s6.xmlParser() ;
+        s6.input="maximum";
+        List<String> maxwords=s6.xmlParser() ;
+        s6.input="All";
+        List<String> all=s6.xmlParser() ;
+        s6.input="minimum";
+        List<String> minwords=s6.xmlParser() ;
+        s6.input="Select";
+        List<String> l=s6.xmlParser() ;
         List<String> list = new ArrayList<String>();
-        List<String> all = Files.readAllLines(Paths.get("All.txt"));
-        List<String> counts = Files.readAllLines(Paths.get("Count.txt"));
-        List<String> sum = Files.readAllLines(Paths.get("Sum.txt"));
-        List<String> average=Files.readAllLines(Paths.get("Average.txt"));
-        List<String> maxwords = Files.readAllLines(Paths.get("maximum.txt"));
-        List<String> minwords = Files.readAllLines(Paths.get("minimum.txt"));
         for (String w : s.split(" ")) {
             list.add(w.toLowerCase());
 

@@ -1,7 +1,5 @@
 package com;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +24,10 @@ public class Sum {
             return;
         }
         this.context=true;
-        List<String> l = Files.readAllLines(Paths.get("Sum.txt"));
+        XMLParser s6=new XMLParser();
+        s6.input="Sum";
+
+        List<String> l=s6.xmlParser() ;
         List<String> list=new ArrayList<String>();
         for (String w : s.split(" ")) {
             list.add(w.toLowerCase());

@@ -1,8 +1,6 @@
 package com;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -18,8 +16,12 @@ public class Average {
     public Average(String s1) throws IOException {
 
         String s = s1;
-        //String c="c_sales";
-        List<String> l = Files.readAllLines(Paths.get("Average.txt"));
+
+        XMLParser s6=new XMLParser();
+        s6.input="Average";
+
+        List<String> l=s6.xmlParser() ;
+
         List<String> list=new ArrayList<String>();
         for (String w : s.split(" ")) {
             list.add(w.toLowerCase());

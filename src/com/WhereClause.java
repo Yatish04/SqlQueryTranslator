@@ -1,7 +1,5 @@
 package com;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class WhereClause {
@@ -118,10 +116,17 @@ public class WhereClause {
 		}
 		String value = "";
 		int l = parts.length;
-		List<String> great = Files.readAllLines(Paths.get("Greater.txt"));
-		List<String> less = Files.readAllLines(Paths.get("Lesser.txt"));
-		List<String> equal = Files.readAllLines(Paths.get("Equals.txt"));
-		List<String> not = Files.readAllLines(Paths.get("Not.txt"));
+        XMLParser s6=new XMLParser();
+        s6.input="Greater";
+        List<String> great=s6.xmlParser() ;
+        s6.input="Lesser";
+        List<String> less=s6.xmlParser() ;
+        s6.input="Equals";
+        List<String> equal=s6.xmlParser() ;
+
+        s6.input="Not";
+        List<String> not=s6.xmlParser() ;
+
 		for (String inp : parts) {
 			if (inp.equalsIgnoreCase("than") || inp.equalsIgnoreCase("to")) {
 				//skip all meaningless word in the relation part

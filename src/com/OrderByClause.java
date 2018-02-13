@@ -22,7 +22,10 @@ return res;
       /*  reorder the sentence
         accordingly in case of exception cases*/
 
-        List<String> others =Files.readAllLines(Paths.get("others.txt"));
+       XMLParser s6=new XMLParser();
+       s6.input="others";
+
+       List<String> others=s6.xmlParser() ;
 
         int n=process.length;
         int i;

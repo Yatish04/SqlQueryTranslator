@@ -1,8 +1,6 @@
 package com;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +19,10 @@ public class From {
         String s = s1;
         //System.out.println("The string entered is "+s);
         //String c="c_sales";
-        List<String> l1 = Files.readAllLines(Paths.get("From.txt"));
+        XMLParser s6=new XMLParser();
+        s6.input="From";
+
+        List<String> l1=s6.xmlParser() ;
         List<String> list1=new ArrayList<String>();
         for (String w : s.split(" ")) {
             list1.add(w.toLowerCase());

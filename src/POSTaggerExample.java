@@ -49,7 +49,7 @@ public class POSTaggerExample
 
 
         try {
-            sentence="customer name who has maximum yearly income";
+            sentence="get all th customers";
             tokenModelIn = new FileInputStream("en-token.bin");
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             Tokenizer tokenizer = new TokenizerME(tokenModel);
