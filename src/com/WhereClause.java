@@ -7,32 +7,28 @@ public class WhereClause {
 	//colname->[condition]
 	//condition->[data]
 
-    public WhereClause(Map<String,String[]> map,Map<String,String> data,Map<String,String> conditions) throws  IOException{
-        String[] arr = {"mumbai","bangalore"};
-        if(map==null){
-            this.finalstring="";
-            return;
-        }
-        map.put("city", arr);
+	public WhereClause(Map<String,String[]> map,Map<String,String> data,Map<String,String> conditions) throws  IOException{
+		if(map==null){
+			this.finalstring="";
+			return;
+		}
+		//map has the following eg->city->["bangalore","chennai"]
+		//System.out.print((map)+"The mapis\n\n");
+		//make sure of the spacings-means greater than 100
+		//data.put("bangalore", "is ");
+		//System.out.print((data)+"The mapis\n\n");
+		//work on condition which are the relations which are there in sentence
 
-        //System.out.print((map)+"The mapis\n\n");
-        data.put("mumbai", "is ");//make sure of the spacings-means greater than 100
-        //data.put("bangalore", "is ");
-        //System.out.print((data)+"The mapis\n\n");
-        conditions.put("city","or");
-        //work on condition which are the relations which are there in sentence
-        //TODO:After the basic proto type
-
-        String s = "";
+		String s = "";
 
 
-        s = stmntgenerator(map, data,conditions);
-        String value = "" + conditions(s);
+		s = stmntgenerator(map, data,conditions);
+		String value = "" + conditions(s);
 
-        System.out.println("WHERE " + value);
-        this.finalstring="WHERE " + value;
+		System.out.println("WHERE " + value);
+		this.finalstring="WHERE " + value;
 
-    }
+	}
 
 
 
@@ -89,11 +85,7 @@ public class WhereClause {
 				i++;
 			} else
 				res = res + " and " + process(data, array, arrayname,conditions);
-			//else {
-			// TODO: this part should handle different relations between different columns
-			// TODO:this part can be handled later
-			//
-			// }
+
 
 
 		}
@@ -116,16 +108,16 @@ public class WhereClause {
 		}
 		String value = "";
 		int l = parts.length;
-        XMLParser s6=new XMLParser();
-        s6.input="Greater";
-        List<String> great=s6.xmlParser() ;
-        s6.input="Lesser";
-        List<String> less=s6.xmlParser() ;
-        s6.input="Equals";
-        List<String> equal=s6.xmlParser() ;
+		XMLParser s6=new XMLParser();
+		s6.input="Greater";
+		List<String> great=s6.xmlParser() ;
+		s6.input="Lesser";
+		List<String> less=s6.xmlParser() ;
+		s6.input="Equals";
+		List<String> equal=s6.xmlParser() ;
 
-        s6.input="Not";
-        List<String> not=s6.xmlParser() ;
+		s6.input="Not";
+		List<String> not=s6.xmlParser() ;
 
 		for (String inp : parts) {
 			if (inp.equalsIgnoreCase("than") || inp.equalsIgnoreCase("to")) {
@@ -157,5 +149,20 @@ public class WhereClause {
 		return value;
 	}//Testing purposes only
 
+/*	public static void main(String[] args) throws IOException {
+        Map<String,String> data=new HashMap<>();
+        Map<String,String> conditions=new HashMap<>();
+        Map<String,String[]> map=new HashMap<>();
 
+        String [] arr={"bangalore","mumbai"};
+        map.put("city",arr);
+
+        //data.put("mumbai", "greater ");
+
+        conditions.put("city","or");
+        WhereClause ob=new WhereClause(map,data,conditions);
+        System.out.println(ob.finalstring);
+
+
+    }*/
 }
