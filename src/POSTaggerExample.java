@@ -1,4 +1,5 @@
 import com.*;
+import com.wanasit.chrono.performance.ChronoPerformanceTest;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.tokenize.Tokenizer;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-
 public class POSTaggerExample
 {
     public static  String tablename="";
@@ -49,7 +49,7 @@ public class POSTaggerExample
 
 
         try {
-            sentence="get all th customers";
+            sentence="get all the customers on 9th december 2017";
             tokenModelIn = new FileInputStream("en-token.bin");
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             Tokenizer tokenizer = new TokenizerME(tokenModel);
@@ -204,6 +204,10 @@ public class POSTaggerExample
 
 
             System.out.println("\n\nINTEGRATION BEGINS FROM HERE\n\n");
+
+            ChronoPerformanceTest ob=new ChronoPerformanceTest(sentence);
+            System.out.println(ob.finalstring);
+
             System.out.println(cleaned2);
             System.out.println(sentence);
             boolean context=false;

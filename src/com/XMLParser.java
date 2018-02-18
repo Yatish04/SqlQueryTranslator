@@ -29,7 +29,7 @@ public class XMLParser {
 
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Node nNode = nList.item(temp);
-                System.out.println("\nCurrent Element :");
+                System.out.println("\nCurrent Element Inside XMLParser :");
                 System.out.print(nNode.getNodeName()+"\n");
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
