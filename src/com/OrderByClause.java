@@ -51,50 +51,90 @@ return res;
     }
 
 
+
+
+
+
+
+
     public static String orderby(String[] input, ArrayList<String> columns) throws IOException{
         String main_string="ORDER BY ";
         HashMap<String,String> map=new HashMap<>();
         List<String> ascending = Files.readAllLines(Paths.get("ascending.txt"));
         List<String> descending =Files.readAllLines(Paths.get("descending.txt"));
 
-
-        boolean asc=true;
-        boolean des=true;
+        String curr_leftcol="";
+        String curr_cond="";
+        int left_dist=0;
+        int right_dist=0;
+        boolean isleft=false;
+        boolean isright=false;
         for (String s: input) {
-            if(ascending.containsAll(Collections.singleton(s))&&asc){
-                //System.out.println("inside "+s);
-                des=false;
-                asc=true;
 
-            }
-            if (descending.containsAll(Collections.singleton(s))&&des){
-                //System.out.println("inside "+s);
-                des=true;
-                asc=false;
-            }
-            if(columns.contains(s)){
-                if(asc==false){
-                    map.put(s,"DESC");
-                    asc=true;
-                }
-                if(des==false){
+            if (columns.contains(s)) {
 
-                    map.put(s,"ASC");
-                    des=true;
+                if (!isright) {
+                    curr_leftcol = s;
+                    left_dist = 0;
+                    isleft = true;
+                    continue;
                 }
 
+                else {
+                    System.out.println(isleft);
+                    System.out.println(isright);
+                    System.out.println(curr_cond+curr_leftcol);
+
+                    if (left_dist==0||right_dist < left_dist) {
+                        isleft = false;
+                        isright = false;
+                        map.put(s, curr_cond);
+                        curr_cond="";
+                        continue;
+                    } else {
+                        System.out.println("hello");
+                        left_dist = 0;
+                        isleft = true;
+                        map.put(curr_leftcol, curr_cond);
+                        curr_cond="";
+                        continue;
+                    }
+                }
             }
 
 
+            if (ascending.contains(s)) {
+                curr_cond = " ASC ";
+                isright = true;
+                right_dist=0;
+                isleft = false;
+                continue;
+            }
+            if (descending.contains(s)) {
+                curr_cond = " DESC ";
+                isleft = false;
+                right_dist=0;
+                isright = true;
+                continue;
+            }
+            if (isleft)
+                left_dist++;
+            if (isright)
+                right_dist++;
         }
+        if(curr_cond!=""){
+            if(curr_leftcol!=""){
+                map.put(curr_leftcol,curr_cond);
+            }
+        }
+            System.out.println(map.keySet());
+            //System.out.println(asc);
+            //System.out.println(des);
+            System.out.println(map.values());
+            //System.out.println("map is"+order(map));
 
-        //System.out.println(map.keySet());
-        //System.out.println(asc);
-        //System.out.println(des);
-        //System.out.println(map.values());
-        //System.out.println("map is"+order(map));
-        if(order(map)=="")
-            return "";
+            if (order(map) == "")
+                return "";
 
 return main_string+order(map);
     }
@@ -122,6 +162,17 @@ return main_string+order(map);
         else {
             this.finalstring=si;
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        ArrayList<String> temp = new ArrayList<>();
+
+        temp.add("yearlyincome");
+        temp.add("age");
+        String org=" customers in ascending order of yearlyincome and age by descending order ";
+        OrderByClause ob = new OrderByClause(org,temp);
+        System.out.println(ob.finalstring);
     }
 
 }

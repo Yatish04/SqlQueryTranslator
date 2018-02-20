@@ -149,20 +149,21 @@ public class WhereClause {
 		return value;
 	}//Testing purposes only
 
-/*	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
         Map<String,String> data=new HashMap<>();
         Map<String,String> conditions=new HashMap<>();
         Map<String,String[]> map=new HashMap<>();
 
         String [] arr={"bangalore","mumbai"};
         map.put("city",arr);
-
+		String [] arr1={"10","20"};
+		map.put("product",arr1);
         //data.put("mumbai", "greater ");
-
+        
         conditions.put("city","or");
         WhereClause ob=new WhereClause(map,data,conditions);
         System.out.println(ob.finalstring);
 
 
-    }*/
+    }
 }
